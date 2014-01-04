@@ -37,19 +37,20 @@ var forumData = {},
         // transparency scale from the data
         var alpha = d3.scale.linear().domain([0, max4obj(forumData)]).range([0.3, 1]);
 
-        // fill in US states
+        // fill in states & provinces
         // use data to determine alpha value of rgba
         d3.selectAll('#USA > [id], #Canada > [id]').attr('fill',
             function (datum, index){
+                var attendees = getStateDatum(this);
                 // this = current DOM element
-                if (getStateDatum(this) === 0) {
+                if (attendees === 0) {
                     return '#ddd';
                 } else {
                     return 'rgba(256,0,0,' +
-                        alpha(getStateDatum(this)) +
+                        alpha(attendees) +
                         ')';
                 }
-        // add tooltip courtesy of hint.css
+        // add hover info
         }).append('title').text(
             function (datum) {
                 return this.parentNode.id.substr(3, 4) +
