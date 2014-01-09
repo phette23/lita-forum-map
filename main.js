@@ -1,4 +1,9 @@
-var forumData = {},
+// shorthand used in window resize code
+var w = window,
+    d = document,
+    b = d.getElementsByTagName('body')[0],
+    e = d.documentElement,
+    forumData = {},
     // load data
     handleJSON = function (err, json) {
         if (err) {
@@ -57,7 +62,23 @@ var forumData = {},
                     ' - ' +
                     getStateDatum(this.parentNode);
         });
+    },
+    // set SVG canvas based upon whichever constraint is greatest
+    fitScreen = function () {
+        var width = d.innerWidth || e.clientWidth || b.clientWidth,
+            height = w.innerHeight|| e.clientHeight|| g.clientHeight;
+        if ( width < height ) {
+            d3.select('#map').attr('width', width).attr('height', width);
+        } else {
+            d3.select('#map').attr('width', height).attr('height', height);
+        }
+    },
+    init = function () {
+        d3.json('2013data.json', handleJSON);
+        fitScreen();
+        // if user adjusts screen, resize map
+        d3.select(window).on('resize', fitScreen);
     };
 
 // this kicks everything off
-d3.json('2013data.json', handleJSON);
+init();
