@@ -1,0 +1,7 @@
+path[id^="US-"]:hover,
+path[id^="CA-"]:hover,
+g[id^="US-"]:hover path,
+g[id^="CA-"]:hover path {
+    stroke: #000;
+    stroke-width: 2px;
+}
