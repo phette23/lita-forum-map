@@ -18,7 +18,6 @@ You could map any data set as long as you have a JSON file of state/province abb
 
 ## To Do
 
-- better scaling, Wikimedia default is obviously too large
-- less assumptions (if a state & province have the same abbreviation that's an issue)
+- fewer assumptions (if a state & province have the same abbreviation that's an issue)
 - better interactivity, hover states, see [Pointer Events](http://www.w3.org/TR/SVG/interact.html#PointerEventsProperty)
 - map state abbreviations to full names
