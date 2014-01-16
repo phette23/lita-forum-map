@@ -6,7 +6,7 @@
   ],
   "description": "Map of LITA Forum attendees.",
   "main": "index.html",
-  "license": "GPL",
+  "license": "CC-BY-SA-2.5",
   "private": true,
   "ignore": [
     "**/.*",
