@@ -1,13 +1,13 @@
 # LITA Forum Attendees Map
 
-A map of where 2013 LITA Forum attendees were from using [d3](http://d3js.org/).
+A map of where 2013 LITA Forum attendees were from using [d3](http://d3js.org/). Uses [an SVG map of the US and Canada from Wikimedia](https://commons.wikimedia.org/wiki/File:BlankMap-USA-states-Canada-provinces,_HI_closer.svg) by user [Lokal_Profil](https://commons.wikimedia.org/wiki/User:Lokal_Profil), [CC-BY-SA-2.5](https://creativecommons.org/licenses/by-sa/2.5/).
 
 ## Getting started
 
 - git clone this repo
 - `bower install` inside its root to get d3, requires [Bower](http://bower.io/) & thus [Node](http://nodejs.org)
 
-You could map any data set as long as you have a JSON file of state/province abbreviations pared with numeric data. So the JSON looks like:
+You could map any data set as long as you have a JSON file of state/province abbreviations paired with numeric data. So the JSON looks like:
 
 ```js
 {
@@ -21,3 +21,7 @@ You could map any data set as long as you have a JSON file of state/province abb
 - fewer assumptions (if a state & province have the same abbreviation that's an issue)
 - better interactivity, hover states, see [Pointer Events](http://www.w3.org/TR/SVG/interact.html#PointerEventsProperty)
 - map state abbreviations to full names
+
+## License
+
+Reusing the Wikimedia license, which is [CC-BY-SA-2.5](https://creativecommons.org/licenses/by-sa/2.5/).
