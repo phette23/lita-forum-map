@@ -19,7 +19,6 @@ You could map any data set as long as you have a JSON file of ISO 3166 state/pro
 ## To Do
 
 - better interactivity, hover states, see [Pointer Events](http://www.w3.org/TR/SVG/interact.html#PointerEventsProperty)
-- map state abbreviations to full names
 
 ## License
 
