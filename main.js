@@ -83,9 +83,7 @@ var w = window,
     },
     // given state DOM el, return associated datum
     getStateDatum = function (el) {
-        // IDs on map are of form 'US-XX' or 'CA-XX'
-        // so last 2 chars are state/province abbr
-        var state = el.id.substr(3, 4);
+        var state = el.id;
         if (forumData[state]) {
             return forumData[state];
         } else {

@@ -7,18 +7,17 @@ A map of where 2013 LITA Forum attendees were from using [d3](http://d3js.org/).
 - git clone this repo
 - `bower install` inside its root to get d3, requires [Bower](http://bower.io/) & thus [Node](http://nodejs.org)
 
-You could map any data set as long as you have a JSON file of state/province abbreviations paired with numeric data. So the JSON looks like:
+You could map any data set as long as you have a JSON file of ISO 3166 state/province abbreviations paired with numeric data. So the JSON looks like:
 
 ```js
 {
-    "AK": 12,
-    "YT": 500000
+    "US-AK": 12,
+    "CA-YT": 500000
 }
 ```
 
 ## To Do
 
-- fewer assumptions (if a state & province have the same abbreviation that's an issue)
 - better interactivity, hover states, see [Pointer Events](http://www.w3.org/TR/SVG/interact.html#PointerEventsProperty)
 - map state abbreviations to full names
 
