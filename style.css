@@ -5,3 +5,16 @@ g[id^="CA-"]:hover path {
     stroke: #000;
     stroke-width: 2px;
 }
+.tooltip {
+    background: #fff;
+    border: 2px solid #777;
+    border-radius: 4px 4px 4px;
+    color: #000;
+    content: attr(data-tip);
+    display: inline-block;
+    padding: .6em;
+    position: absolute;
+}
+.hidden {
+    display: none;
+}

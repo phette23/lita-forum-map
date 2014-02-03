@@ -105,7 +105,8 @@ var w = window,
     // run viz steps once we have data
     visualize = function () {
         // transparency scale from the data
-        var alpha = d3.scale.linear().domain([0, max4obj(forumData)]).range([0.3, 1]);
+        var alpha = d3.scale.linear().domain([0, max4obj(forumData)]).range([0.3, 1]),
+            tooltip = d3.select('.tooltip');
 
         // fill in states & provinces
         // use data to determine alpha value of rgba
@@ -120,12 +121,30 @@ var w = window,
                         alpha(attendees) +
                         ')';
                 }
-        // add hover info
-        }).append('title').text(
-            function (datum) {
-                // use abbreviation map to get full name
-                var parent = this.parentNode;
-                return abbr[parent.id] + ' - ' + getStateDatum(parent);
+        // add tooltips on hover
+        }).on('mousemove', function () {
+            var target = this,
+                event = d3.event;
+
+            // show tooltip, base position on mouse's coords
+            tooltip.classed('hidden', false)
+                .attr('style', function () {
+                    var left = 'left:',
+                        top = 'top:';
+
+                    // numbers below are guesses that look OK
+                    // could be adjusted
+                    left += (event.x + 15) + 'px;';
+                    top += (event.y - 50) + 'px;';
+
+                    return left + top;
+                // set text of tooltip to "State - # of Attendees"
+                }).text( function () {
+                    return abbr[target.id] + ' - ' + getStateDatum(target);
+                });
+        }).on('mouseleave', function () {
+            // hide tooltip when mouse isn't over a state/province
+            tooltip.classed('hidden', true);
         });
     },
     // set SVG canvas based upon whichever constraint is greatest
