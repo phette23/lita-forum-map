@@ -7,7 +7,7 @@ A map of where 2013 LITA Forum attendees were from using [d3](http://d3js.org/).
 - git clone this repo
 - `bower install` inside its root to get d3, requires [Bower](http://bower.io/) & thus [Node](http://nodejs.org)
 
-You could map any data set as long as you have a JSON file of ISO 3166 state/province abbreviations paired with numeric data. So the JSON looks like:
+You could map any data set as long as you have a JSON file of [ISO 3166 state/province abbreviations](https://en.wikipedia.org/wiki/ISO_3166-2) paired with numeric data. So the JSON looks like:
 
 ```js
 {
