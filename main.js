@@ -158,7 +158,7 @@ var w = window,
         }
     },
     init = function () {
-        d3.json('2013data.json', handleJSON);
+        d3.json('data/2014.json', handleJSON);
         fitScreen();
         // if user adjusts screen, resize map
         d3.select(window).on('resize', fitScreen);
