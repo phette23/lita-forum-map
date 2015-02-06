@@ -1,13 +1,13 @@
 # LITA Forum Attendees Map
-
-A map of where 2013 LITA Forum attendees were from using [d3](http://d3js.org/). Uses [an SVG map of the US and Canada from Wikimedia](https://commons.wikimedia.org/wiki/File:BlankMap-USA-states-Canada-provinces,_HI_closer.svg) by user [Lokal_Profil](https://commons.wikimedia.org/wiki/User:Lokal_Profil), [CC-BY-SA-2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+  
+A map of where LITA Forum attendees were from using [d3](http://d3js.org/). Uses [an SVG map of the US and Canada from Wikimedia](https://commons.wikimedia.org/wiki/File:BlankMap-USA-states-Canada-provinces,_HI_closer.svg) by user [Lokal_Profil](https://commons.wikimedia.org/wiki/User:Lokal_Profil), [CC-BY-SA-2.5](https://creativecommons.org/licenses/by-sa/2.5/). Loads 2014 data by default; edit the `d3.json('data/2014.json', handleJSON);` line of main.js to map data from 2013.
 
 ## Getting started
 
 - git clone this repo
 - `bower install` inside its root to get d3, requires [Bower](http://bower.io/) & thus [Node](http://nodejs.org)
 
-You could map any data set as long as you have a JSON file of [ISO 3166 state/province abbreviations](https://en.wikipedia.org/wiki/ISO_3166-2) paired with numeric data. So the JSON looks like:
+You could map any data set as long as you have a JSON file of [ISO 3166 state/province abbreviations](https://en.wikipedia.org/wiki/ISO_3166-2) paired with numeric data. The JSON looks like:
 
 ```js
 {
@@ -18,12 +18,12 @@ You could map any data set as long as you have a JSON file of [ISO 3166 state/pr
 
 ## Exporting the Map to an Image
 
-While the process has a few steps, it is easy to export the resulting map to an image:
+While there are a few steps, it's easy to export the map to an image file:
 
 - Open up the map in a web browser.
 - Using the browser's JavaScript console, copy the outerHTML of the SVG map to your system clipboard. In Chrome and Safari, this is as simple as running `copy($('#map').outerHTML)`.
 - Save this text to a file ending in ".svg". You will probably want to increase the SVG canvas size so your exported image is higher resolution; change the "width" and "height" attributes of the `<svg>` element to something higher like 1730.
-- Use [ImageMagick](http://www.imagemagick.org) to convert the SVG to an image, e.g. by running `convert map.svg -resize 1730x1730 map.png` in the same directory as the SVG file.
+- Use [ImageMagick](http://www.imagemagick.org) to convert the SVG to an image, e.g. by running `convert map.svg map.png` in the same directory as the SVG file.
 
 ## License
 
